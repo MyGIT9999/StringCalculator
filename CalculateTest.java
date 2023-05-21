@@ -4,11 +4,11 @@ import org.junit.Test;
 
 
 public class CalculateTest {
-    @Test(expected = RuntimeException.class)
-    public final void whenMoreThan2NumbersAreUsedThenExceptionIsThrown() {
-        Calculate.add("1,2,3");
-        Assert.assertTrue(true);
+    @Test
+    public final void whenAnyNumberOfNumbersIsUsedThenReturnValuesAreTheirSums() {
+        Assert.assertEquals(3+6+15+18+46+33, StringCalculator.add("3,6,15,18,46,33"));
     }
+
     @Test
     public final void when2NumbersAreUsedThenNoExceptionIsThrown() {
         Calculate.add("1,2");
