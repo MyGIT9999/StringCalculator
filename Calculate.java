@@ -8,17 +8,17 @@ public class Calculate {
 
    public static final int add (final String values)  {
 
-       String[] numbersArray = values.split(",");
+       int returnValue = 0;
+       String[] numbersArray = numbers.split(",");
        if (numbersArray.length > 2) {
-           throw new RuntimeException("Up to 2 numbers separated by comma are allowed");
-       } else {
-           for (String number : numbersArray) {
-               if (!number.isEmpty()) {
-                   Integer.parseInt(number);
-               }
+           throw new RuntimeException("Up to 2 numbers separated by comma (,) are allowed");
+       }
+       for (String number : numbersArray) {
+           if (!number.trim().isEmpty()) {
+               returnValue += Integer.parseInt(number);
            }
        }
-       return 0;
+       return returnValue;
    }
 
 }
