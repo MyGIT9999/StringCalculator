@@ -6,16 +6,19 @@ import java.util.ArrayList;
 public class Calculate {
 
 
-   public static final void add (final String values)  {
+   public static final int add (final String values)  {
 
        String[] numbersArray = values.split(",");
        if (numbersArray.length > 2) {
-           throw new RuntimeException("Up to 2 numbers separated by comma (,) are allowed");
+           throw new RuntimeException("Up to 2 numbers separated by comma are allowed");
        } else {
            for (String number : numbersArray) {
-               Integer.parseInt(number);
+               if (!number.isEmpty()) {
+                   Integer.parseInt(number);
+               }
            }
        }
+       return 0;
    }
 
 }
